@@ -18,6 +18,7 @@ gradle build
 Copy the extension to the plugins folder of your XLD installation:
 ```
 cp ./build/libs/xld-ui-permissions.jar $XLD_HOME/plugins
+```
 
 # Snapshot #
 
