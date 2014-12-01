@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="https://code.angularjs.org/1.2.9/angular.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body ng-app="myRepo" ng-controller="RepoController" class="ng-cloak">
+	<div class="container-fluid">
+
+		<br>
+		<i class="icon-glass"></i>
+		<a ng-click="loadCis()" href="#" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-refresh"></i> Reload Permissions</a>
+		<h4 ng-if="!resultCis">
+			<i>...is currently empty. Please create some CIs folder and click reload.</i>
+		</h4>
+
+		<div class="radio" ng-repeat="(item,value) in resultCis">
+			<label><input type="radio" ng-model="$parent.optradio" value="{{item}}">{{item}}</label>
+		</div>
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+			<div class="panel-heading">Global Permissions Listing</div>
+
+			<table class="table table-striped">
+				<tr>
+					<th>Environment Name</th>
+					<th ng-repeat="items in globalperms">{{items.replace("#"," ").replace("_"," ")}}</th>
+				</tr>
+				<tbody ng-repeat="(key,value) in resultCis[optradio]">
+					<tr ng-if="key == 'global'">
+						<td>{{key}}</td>
+						<td ng-repeat="item in globalperms"><label><i ng-class="value.indexOf(item) > -1 ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove' "></i></label></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+			<div class="panel-heading">Folder Permissions Listing</div>
+
+			<table class="table table-striped">
+				<tr>
+					<th>Environment Name</th>
+					<th ng-repeat="items in allperms">{{items.replace("#"," ").replace("_"," ")}}</th>
+				</tr>
+				<tbody ng-repeat="(key,value) in resultCis[optradio]">
+					<tr ng-if="key != 'global'">
+						<td>{{key}}</td>
+						<td ng-repeat="item in allperms"><i ng-class="value.indexOf(item) > -1 ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove' "></i></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
