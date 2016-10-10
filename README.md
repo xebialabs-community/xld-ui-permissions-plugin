@@ -36,4 +36,4 @@ cp ./build/libs/xld-ui-permissions.jar $XLD_HOME/plugins
 
 # Snapshot #
 
-![Configuration] (/screenshot.png)
+![Configuration] (/images/screenshot.png)
