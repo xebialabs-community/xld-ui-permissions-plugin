@@ -3,3 +3,13 @@ notifications:
   hipchat:
     rooms:
       secure: J+zrH9Sv4LVsYPDPoal4Bg5YMUNWByQExukb1ItfdC0XUzHtUhqXEbLqxvVRrVFAYyS5QAVwo2sI/Ps4qX0IZNW3glEuy+jC+Jv6NLab5Lu1JeurHK9/Nk1PpNas0gnczQIjlfIKk8BLSSvBl4rey/B8IHlkLFWsl3RAbnF3mvE=
+deploy:
+  provider: releases
+  api_key:
+    secure: CWHRv0NvfsPuefQDYewiLIfuAl61JN6rh+tqm0CzjrhdL4ZWvrP3FE2nAZqnnmOh8eoDy5cgX6UqCA6vHrcWXZUXfqmTEOszUDytP5o8B6cEcAekYGfF9q6cWrSE+wjphM0IlvvBkv9U/UF/KBBdEXODq2ywWArwHA36RLGZaNg=
+  file: build/libs/xld-ui-permissions-plugin-5.0.0.xldp
+  skip_cleanup: true
+  on:
+    all_branches: true
+    tags: true
+    repo: xebialabs-community/xld-ui-permissions-plugin
