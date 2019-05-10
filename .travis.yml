@@ -6,7 +6,7 @@ notifications:
 deploy:
   provider: releases
   api_key:
-    secure: CWHRv0NvfsPuefQDYewiLIfuAl61JN6rh+tqm0CzjrhdL4ZWvrP3FE2nAZqnnmOh8eoDy5cgX6UqCA6vHrcWXZUXfqmTEOszUDytP5o8B6cEcAekYGfF9q6cWrSE+wjphM0IlvvBkv9U/UF/KBBdEXODq2ywWArwHA36RLGZaNg=
+    secure: KI3+EJHLnB61kKItigfmhkfF1TwHwmpI9LLbdPlGaqN/iD+7ipsE2aiArW+cVt4bCvEVsUCJHvpbKk7EhBtny7TBxIA4FbF2ahEIyXfAM3uJZ81msgqDKCzZ3nNoBvUe0McmWGs7UAmJvoi5BTTaEFwremkwqiXmtQmblkXTsWM=
   file: build/libs/xld-ui-permissions-plugin-5.0.0.xldp
   skip_cleanup: true
   on:
